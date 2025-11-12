@@ -1,6 +1,5 @@
 //Komponen adalah fungsi yang return JSX
 import { useState } from "react";
-import HelloWorld from "./HelloWorld";
 
 const App = () => {
   // let hello = "Hello World"; //ini contoh deklarasi variabel biasa

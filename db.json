@@ -1,19 +1,38 @@
 {
-  "users": [
-    { "id": "1", "name": "Student 1", "image": "pic1.jpg" },
-    { "id": "2", "name": "Student 2", "image": "pic2.jpg" },
-    { "id": "3", "name": "Student 3" },
-    { "id": "4", "name": "Student 4" }
+  "hero": {
+    "name": "Ariellya",
+    "role": "UI/UX Designer & Frontend Developer",
+    "bio": "Passionate about blending game aesthetics with clean, functional interfaces.",
+    "avatar": "/placeholder.svg"
+  },
+  "about": {
+    "history": "Mahasiswa Informatika yang suka desain UI bertema game.",
+    "focus": "UI/UX Design • Frontend • Game-inspired Interfaces"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Retro Quest Dashboard",
+      "description": "Dashboard analitik dengan nuansa RPG 16-bit.",
+      "image": "/placeholder.svg",
+      "tags": ["React", "Tailwind", "Framer Motion"]
+    },
+    {
+      "id": 2,
+      "title": "Pixel Portfolio",
+      "description": "Portofolio dengan animasi pixel art.",
+      "image": "/placeholder.svg",
+      "tags": ["Next.js", "TypeScript"]
+    }
   ],
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+  "skills": [
+    { "category": "Design", "items": ["Figma", "UI/UX", "Prototyping"] },
+    { "category": "Code", "items": ["React", "Tailwind", "JavaScript"] },
+    { "category": "Tools", "items": ["Git", "VS Code", "Framer"] }
   ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
-  "profile": {
-    "name": "typicode"
+  "contact": {
+    "email": "hello@ariellya.dev",
+    "github": "https://github.com/ariellya",
+    "linkedin": "https://linkedin.com/in/ariellya"
   }
 }
