@@ -6,8 +6,8 @@ import { Landing } from "./components/LandingPage/Landing";
 import { About } from "./components/About/About";
 import { Project } from "./components/Project/Project";
 import { Skill } from "./components/SkillPage/Skill";
-import { Contact } from "./components/ContactPage/Contact"; // Import komponen Contact
-// import { Footer } from "./components/Footer/Footer";
+import { Contact } from "./components/ContactPage/Contact";
+import { Footer } from "./components/Footer/Footer"; 
 
 const API_BASE = "http://localhost:3000"; 
 
@@ -17,7 +17,8 @@ export default function RestAPI() {
     about: null,
     projects: [],
     skills: [],
-    contact: null, // Tambahkan state untuk contact
+    contact: null,
+    // footer: null, // Tidak diperlukan jika Footer tidak menerima props dari sini
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -25,13 +26,14 @@ export default function RestAPI() {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        // Ambil data hero, about, projects, skills, dan contact
+        // Ambil data yang diperlukan oleh komponen yang ditampilkan
         const [heroRes, aboutRes, projectsRes, skillsRes, contactRes] = await Promise.all([
             axios.get(`${API_BASE}/hero`),
             axios.get(`${API_BASE}/about`),
             axios.get(`${API_BASE}/projects`),
             axios.get(`${API_BASE}/skills`),
-            axios.get(`${API_BASE}/contact`), // Ambil data contact
+            axios.get(`${API_BASE}/contact`),
+            // axios.get(`${API_BASE}/footer`), // Tidak diambil karena Footer tidak menggunakan props dari sini
         ]);
 
         setData({
@@ -39,7 +41,8 @@ export default function RestAPI() {
           about: aboutRes.data || {},
           projects: projectsRes.data || [],
           skills: skillsRes.data || [],
-          contact: contactRes.data || {}, // Simpan data contact
+          contact: contactRes.data || {},
+          // footer: footerRes.data || {}, // Tidak diset karena tidak diambil
         });
       } catch (err) {
         console.error("Failed to load data from API:", err.message);
@@ -79,8 +82,8 @@ export default function RestAPI() {
       {data.about && <About about={data.about} />}
       <Project projects={data.projects || []} />
       <Skill skills={data.skills || []} />
-      <Contact contactData={data.contact} /> {/* Tambahkan komponen Contact */}
-      {/* Hanya komponen Header, Landing, About, Project, Skill, dan Contact yang dirender */}
+      <Contact contactData={data.contact} />
+      <Footer />
     </>
   );
 }

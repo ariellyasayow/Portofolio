@@ -4,7 +4,7 @@ export const Landing = ({ hero }) => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-[#0a0a0f] text-gray-100 overflow-hidden pt-30" // <-- Tambahkan pt-20
+      className="relative min-h-screen flex items-center justify-center bg-[#0a0a0f] text-gray-100 overflow-hidden pt-20" 
     >
       {/* Efek cahaya & partikel neon */}
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 via-transparent to-transparent blur-3xl"></div>
