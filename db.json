@@ -30,9 +30,12 @@
     { "category": "Code", "items": ["React", "Tailwind", "JavaScript"] },
     { "category": "Tools", "items": ["Git", "VS Code", "Framer"] }
   ],
+
   "contact": {
     "email": "hello@ariellya.dev",
-    "github": "https://github.com/ariellya",
-    "linkedin": "https://linkedin.com/in/ariellya"
+    "social": {
+      "github": "https://github.com/ariellya",
+      "linkedin": "https://linkedin.com/in/ariellya"
+    }
   }
 }
