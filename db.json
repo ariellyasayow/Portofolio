@@ -12,17 +12,15 @@
   "projects": [
     {
       "id": 1,
-      "title": "Retro Quest Dashboard",
-      "description": "Dashboard analitik dengan nuansa RPG 16-bit.",
-      "image": "/placeholder.svg",
-      "tags": ["React", "Tailwind", "Framer Motion"]
+      "title": "Roll a Ball Game",
+      "description": "A simple 3D game built in Unity using C#, where the player controls a ball to collect items and avoid obstacles.",
+      "tags": ["C#", "Unity", "Game Development"]
     },
     {
       "id": 2,
-      "title": "Pixel Portfolio",
-      "description": "Portofolio dengan animasi pixel art.",
-      "image": "/placeholder.svg",
-      "tags": ["Next.js", "TypeScript"]
+      "title": "Carwash Desktop App",
+      "description": "A desktop application for managing carwash operations, built using C#.",
+      "tags": ["C#", "Desktop App", "Software Development"]
     }
   ],
   "skills": [

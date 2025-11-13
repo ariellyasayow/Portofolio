@@ -4,7 +4,7 @@ import axios from "axios";
 import { Header } from "./components/Header/Header";
 import { Landing } from "./components/LandingPage/Landing";
 import { About } from "./components/About/About";
-// import { Project } from "./components/Project/Project";
+import { Project } from "./components/Project/Project";
 // import { Skill } from "./components/SkillPage/Skill";
 // import { Contact } from "./components/ContactPage/Contact";
 // import { Footer } from "./components/Footer/Footer";
@@ -15,9 +15,9 @@ export default function RestAPI() {
   const [data, setData] = useState({
     hero: null,
     about: null,
-    // projects: [],
-    // skills: [],
-    // contact: null,
+    projects: [],
+    // skills: [], // Tidak digunakan
+    // contact: null, // Tidak digunakan
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -25,20 +25,21 @@ export default function RestAPI() {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const [heroRes, aboutRes] = await Promise.all([
+        // Hanya ambil data yang diperlukan
+        const [heroRes, aboutRes, projectsRes] = await Promise.all([
             axios.get(`${API_BASE}/hero`),
             axios.get(`${API_BASE}/about`),
-            // axios.get(`${API_BASE}/projects`),
-            // axios.get(`${API_BASE}/skills`),
-            // axios.get(`${API_BASE}/contact`),
+            axios.get(`${API_BASE}/projects`),
+            // axios.get(`${API_BASE}/skills`), // Dihapus
+            // axios.get(`${API_BASE}/contact`), // Dihapus
         ]);
 
         setData({
           hero: heroRes.data || {},
           about: aboutRes.data || {},
-          // projects: projectsRes.data || [],
-          // skills: skillsRes.data || [],
-          // contact: contactRes.data || {},
+          projects: projectsRes.data || [],
+          // skills: skillsRes.data || {}, // Dihapus
+          // contact: contactRes.data || {}, // Dihapus
         });
       } catch (err) {
         console.error("Failed to load data from API:", err.message);
@@ -76,7 +77,8 @@ export default function RestAPI() {
       <Header />
       {data.hero && <Landing hero={data.hero} />}
       {data.about && <About about={data.about} />}
-     
+      <Project projects={data.projects || []} />
+      {/* Hanya komponen Header, Landing, About, dan Project yang dirender */}
     </>
   );
 }
