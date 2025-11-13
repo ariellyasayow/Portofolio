@@ -1,38 +1,48 @@
 {
   "hero": {
     "name": "Ariellya",
-    "role": "UI/UX Designer & Frontend Developer",
-    "bio": "Passionate about blending game aesthetics with clean, functional interfaces.",
-    "avatar": "/placeholder.svg"
+    "role": "Informatics Student",
+    "bio": "From concept to code — crafting interfaces that are both beautiful and functional.",
+    "avatar": "/profile.jpg"
   },
   "about": {
-    "history": "Mahasiswa Informatika yang suka desain UI bertema game.",
-    "focus": "UI/UX Design • Frontend • Game-inspired Interfaces"
+    "history": "I am currently pursuing my studies in Informatics at Universitas Kelabat, where I am in my 5th semester. My academic journey has been driven by a strong fascination with the intersection of technology and user experience. I am particularly interested in UI/UX design, exploring how to create intuitive and engaging interfaces. This interest naturally extends into game development, where I am deeply fascinated by how games are crafted, from their core mechanics to their visual and interactive design. I strive to apply these principles to create compelling digital experiences. My focus lies in exploring the technical and creative aspects that bring virtual worlds to life.",
+    "focus": "UI/UX Design • Game Development • Frontend Development • Interactive Interfaces"
   },
   "projects": [
     {
       "id": 1,
-      "title": "Retro Quest Dashboard",
-      "description": "Dashboard analitik dengan nuansa RPG 16-bit.",
-      "image": "/placeholder.svg",
-      "tags": ["React", "Tailwind", "Framer Motion"]
+      "title": "Roll a Ball Game",
+      "description": "A simple 3D game built in Unity using C#, where the player controls a ball to collect items and avoid obstacles.",
+      "tags": ["C#", "Unity", "Game Development"]
     },
     {
       "id": 2,
-      "title": "Pixel Portfolio",
-      "description": "Portofolio dengan animasi pixel art.",
-      "image": "/placeholder.svg",
-      "tags": ["Next.js", "TypeScript"]
+      "title": "Carwash Desktop App",
+      "description": "A desktop application for managing carwash operations, built using C#.",
+      "tags": ["C#", "Desktop App", "Software Development"]
     }
   ],
   "skills": [
-    { "category": "Design", "items": ["Figma", "UI/UX", "Prototyping"] },
-    { "category": "Code", "items": ["React", "Tailwind", "JavaScript"] },
-    { "category": "Tools", "items": ["Git", "VS Code", "Framer"] }
+    {
+      "category": "Programming Languages",
+      "items": ["Python", "C#"]
+    },
+    {
+      "category": "Frontend & Frameworks",
+      "items": ["React JS", "HTML", "CSS"]
+    },
+    {
+      "category": "Tools & Design",
+      "items": ["Git", "VS Code", "Figma"]
+    }
   ],
+
   "contact": {
-    "email": "hello@ariellya.dev",
-    "github": "https://github.com/ariellya",
-    "linkedin": "https://linkedin.com/in/ariellya"
+    "email": "sayowariellya@gmail.com",
+    "social": {
+      "github": "https://github.com/ariellya",
+      "linkedin": "https://www.linkedin.com/in/ariellya-sayow-108419355?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+    }
   }
 }

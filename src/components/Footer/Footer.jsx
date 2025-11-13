@@ -1,73 +1,47 @@
 // src/components/layout/Footer.jsx
 import { Heart } from "lucide-react";
 
-// Menerima props 'contact' dari RestAPI.jsx
-export const Footer = ({ contact }) => {
-  // Gunakan data dari props, jika tidak ada, gunakan fallback
-  const email = contact?.email || "hello@ariellya.dev";
-  const github = contact?.social?.github || "#";
-  const linkedin = contact?.social?.linkedin || "#";
+export const Footer = ({ }) => {
+
 
   return (
-    <footer className="bg-black border-t border-neon-blue/30 py-12">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center gap-6">
-          {/* Pixel Art Divider */}
-          <div className="w-full max-w-md">
-            <div className="h-1 bg-gradient-to-r from-transparent via-neon-blue to-transparent"></div>
-            <div className="flex justify-center gap-2 mt-2">
-              <div className="w-2 h-2 bg-neon-blue"></div>
-              <div className="w-2 h-2 bg-neon-cyan"></div>
-              <div className="w-2 h-2 bg-neon-green"></div>
-              <div className="w-2 h-2 bg-neon-purple"></div>
-              <div className="w-2 h-2 bg-neon-red"></div>
-            </div>
+    <footer className="relative bg-[#0a0a0f] border-t border-cyan-500/30 py-14 overflow-hidden">
+      {/* Efek cahaya di background */}
+      <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 via-transparent to-transparent blur-3xl"></div>
+
+      <div className="relative container mx-auto px-6 flex flex-col items-center gap-8 text-center">
+        {/* Divider pixel glow dengan animasi */}
+        <div className="w-full max-w-md animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <div className="h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent shadow-[0_0_15px_rgba(0,255,255,0.5)]"></div>
+          <div className="flex justify-center gap-2 mt-2">
+            <div className="w-2 h-2 bg-cyan-400 rounded-sm shadow-[0_0_6px_rgba(0,255,255,0.8)] animate-pulse"></div>
+            <div className="w-2 h-2 bg-pink-500 rounded-sm shadow-[0_0_6px_rgba(255,0,255,0.8)] animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-2 h-2 bg-green-400 rounded-sm shadow-[0_0_6px_rgba(0,255,0,0.8)] animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+            <div className="w-2 h-2 bg-purple-400 rounded-sm shadow-[0_0_6px_rgba(128,0,255,0.8)] animate-pulse" style={{ animationDelay: '0.6s' }}></div>
           </div>
-
-          {/* Contact Links */}
-          <div className="flex gap-6">
-            <a
-              href={`mailto:${email}`}
-              className="text-neon-cyan hover:text-neon-blue transition-colors font-retro"
-            >
-              {email}
-            </a>
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neon-purple hover:text-neon-pink transition-colors font-retro"
-            >
-              GitHub
-            </a>
-            <a
-              href={linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neon-blue hover:text-neon-cyan transition-colors font-retro"
-            >
-              LinkedIn
-            </a>
-          </div>
-
-          {/* Copyright */}
-          <div className="flex items-center gap-2 text-muted-foreground text-sm">
-            <span>Designed & Built with</span>
-            <Heart className="w-4 h-4 text-neon-red animate-pulse" fill="currentColor" />
-            <span>by</span>
-            <span className="font-pixel text-xs text-neon-blue">ARIELLYA</span>
-          </div>
-
-          {/* Tagline */}
-          <p className="font-retro text-neon-cyan text-center max-w-md">
-            "From the darkness of the game world, I emerge — bringing designs that live, interact, and tell stories."
-          </p>
-
-          {/* Copyright Year */}
-          <p className="text-muted-foreground text-xs">
-            © {new Date().getFullYear()} The Gamer Designer. All rights reserved.
-          </p>
         </div>
+
+
+        {/* Signature dengan animasi */}
+        <div className="flex items-center gap-2 text-gray-400 text-sm animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          <span>Front End</span>
+          <Heart
+            className="w-4 h-4 text-pink-500 animate-pulse"
+            fill="currentColor"
+          />
+          <span>by</span>
+          <span className="font-pixel text-xs text-cyan-400 group-hover:text-yellow-300 transition-colors duration-300">ARIELLYA</span>
+        </div>
+
+        {/* Tagline dengan animasi dan hover */}
+        <p className="font-retro text-cyan-300/80 text-sm max-w-lg leading-relaxed animate-fade-in-up hover:text-cyan-100 hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.3)] transition-all duration-300 cursor-default" style={{ animationDelay: '0.9s' }}>
+          “Where aesthetics meet functionality, great user experiences are born.”
+        </p>
+
+        {/* Copyright dengan animasi */}
+        <p className="text-gray-500 text-xs tracking-wide animate-fade-in-up" style={{ animationDelay: '1s' }}>
+          © {new Date().getFullYear()} Personal Website
+        </p>
       </div>
     </footer>
   );
