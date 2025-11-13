@@ -24,9 +24,18 @@
     }
   ],
   "skills": [
-    { "category": "Design", "items": ["Figma", "UI/UX", "Prototyping"] },
-    { "category": "Code", "items": ["React", "Tailwind", "JavaScript"] },
-    { "category": "Tools", "items": ["Git", "VS Code", "Framer"] }
+    {
+      "category": "Programming Languages",
+      "items": ["Python", "C#"]
+    },
+    {
+      "category": "Frontend & Frameworks",
+      "items": ["React JS", "HTML", "CSS"]
+    },
+    {
+      "category": "Tools & Design",
+      "items": ["Git", "VS Code", "Figma"]
+    }
   ],
 
   "contact": {

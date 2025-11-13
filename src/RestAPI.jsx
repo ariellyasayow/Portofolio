@@ -5,7 +5,7 @@ import { Header } from "./components/Header/Header";
 import { Landing } from "./components/LandingPage/Landing";
 import { About } from "./components/About/About";
 import { Project } from "./components/Project/Project";
-// import { Skill } from "./components/SkillPage/Skill";
+import { Skill } from "./components/SkillPage/Skill"; // Import komponen Skill
 // import { Contact } from "./components/ContactPage/Contact";
 // import { Footer } from "./components/Footer/Footer";
 
@@ -16,7 +16,7 @@ export default function RestAPI() {
     hero: null,
     about: null,
     projects: [],
-    // skills: [], // Tidak digunakan
+    skills: [], // Tambahkan state untuk skills
     // contact: null, // Tidak digunakan
   });
   const [loading, setLoading] = useState(true);
@@ -25,12 +25,12 @@ export default function RestAPI() {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        // Hanya ambil data yang diperlukan
-        const [heroRes, aboutRes, projectsRes] = await Promise.all([
+        // Ambil data hero, about, projects, dan skills
+        const [heroRes, aboutRes, projectsRes, skillsRes] = await Promise.all([
             axios.get(`${API_BASE}/hero`),
             axios.get(`${API_BASE}/about`),
             axios.get(`${API_BASE}/projects`),
-            // axios.get(`${API_BASE}/skills`), // Dihapus
+            axios.get(`${API_BASE}/skills`), // Ambil data skills
             // axios.get(`${API_BASE}/contact`), // Dihapus
         ]);
 
@@ -38,7 +38,7 @@ export default function RestAPI() {
           hero: heroRes.data || {},
           about: aboutRes.data || {},
           projects: projectsRes.data || [],
-          // skills: skillsRes.data || {}, // Dihapus
+          skills: skillsRes.data || [], // Simpan data skills
           // contact: contactRes.data || {}, // Dihapus
         });
       } catch (err) {
@@ -78,7 +78,8 @@ export default function RestAPI() {
       {data.hero && <Landing hero={data.hero} />}
       {data.about && <About about={data.about} />}
       <Project projects={data.projects || []} />
-      {/* Hanya komponen Header, Landing, About, dan Project yang dirender */}
+      <Skill skills={data.skills || []} /> {/* Tambahkan komponen Skill */}
+      {/* Hanya komponen Header, Landing, About, Project, dan Skill yang dirender */}
     </>
   );
 }
