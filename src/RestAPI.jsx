@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Header } from "./components/Header/Header";
 import { Landing } from "./components/LandingPage/Landing";
-// import { About } from "./components/About/About";
+import { About } from "./components/About/About";
 // import { Project } from "./components/Project/Project";
 // import { Skill } from "./components/SkillPage/Skill";
 // import { Contact } from "./components/ContactPage/Contact";
@@ -14,7 +14,7 @@ const API_BASE = "http://localhost:3000";
 export default function RestAPI() {
   const [data, setData] = useState({
     hero: null,
-    // about: null,
+    about: null,
     // projects: [],
     // skills: [],
     // contact: null,
@@ -25,9 +25,9 @@ export default function RestAPI() {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const [heroRes] = await Promise.all([
+        const [heroRes, aboutRes] = await Promise.all([
             axios.get(`${API_BASE}/hero`),
-            // axios.get(`${API_BASE}/about`),
+            axios.get(`${API_BASE}/about`),
             // axios.get(`${API_BASE}/projects`),
             // axios.get(`${API_BASE}/skills`),
             // axios.get(`${API_BASE}/contact`),
@@ -35,7 +35,7 @@ export default function RestAPI() {
 
         setData({
           hero: heroRes.data || {},
-          // about: aboutRes.data || {},
+          about: aboutRes.data || {},
           // projects: projectsRes.data || [],
           // skills: skillsRes.data || [],
           // contact: contactRes.data || {},
@@ -75,7 +75,8 @@ export default function RestAPI() {
     <>
       <Header />
       {data.hero && <Landing hero={data.hero} />}
-    
+      {data.about && <About about={data.about} />}
+     
     </>
   );
 }
